@@ -9,13 +9,7 @@
 html {
   font-size: 62.5%; }
 
-/* Variable */
-:root {
-  --light-green: #7ed56f;
-  --medium-green: #55c57a;
-  --dark-green: #28b485;
-  --dark-grey: #777; }
-
+/* Variables */
 /* Animations */
 @keyframes moveInLeft {
   0% {
@@ -64,21 +58,18 @@ body {
   /* Set clip path on image clockwise rotation*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__content {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -86,69 +77,60 @@ body {
   margin-bottom: 6rem;
   /* Determines if the backside of the element is visable to the user - not rotating so not needed. Stops animation glitch*/
   backface-visibility: hidden; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 1s ease-in-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.3rem;
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-in-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.3rem;
+    animation: moveInRight 1s ease-out; }
 
 /* Button styles */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--dark-grey);
-  display: inline-block;
-  transition: all 0.3s ease-in-out;
-  position: relative; }
-
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem; }
-
-/* Hidden button animation */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s ease-in-out;
-  opacity: 0.3; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-/* Button animation */
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  /* adds animation properties before page load. Basically hides btn and then uses delay property  */
-  animation-fill-mode: backwards; }
+.btn {
+  /* Hidden button animation */
+  /* Button animation */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark-grey);
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    position: relative; }
+  .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+    opacity: 0.3; }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* adds animation properties before page load. Basically hides btn and then uses delay property  */
+    animation-fill-mode: backwards; }
 
 /* ------------------------- Seciton title Styles -------------------------  */
