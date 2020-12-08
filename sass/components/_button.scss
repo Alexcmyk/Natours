@@ -36,7 +36,7 @@
     }
   }
 
-  /* Hidden button animation */
+  // Hidden button animation
 
   &::after {
     content: "";
@@ -52,11 +52,11 @@
     opacity: 0.3;
   }
 
-  /* Button animation */
+  // Button animation
 
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
-    /* adds animation properties before page load. Basically hides btn and then uses delay property  */
+    // adds animation properties before page load. Basically hides btn and then uses delay property
     animation-fill-mode: backwards;
   }
 }

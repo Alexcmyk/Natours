@@ -1,3 +1,5 @@
+/* Typography */
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -12,7 +14,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 6rem;
 
-  /* Determines if the backside of the element is visable to the user - not rotating so not needed. Stops animation glitch*/
+  // Determines if the backside of the element is visable to the user - not rotating so not needed. Stops animation glitch
   backface-visibility: hidden;
 
   &--main {
