@@ -9,6 +9,7 @@
     display: inline-block;
     transition: all 0.3s ease-in-out;
     position: relative;
+    font-size: $font-default-size;
   }
 
   &:hover {
@@ -58,5 +59,31 @@
     animation: moveInBottom 0.5s ease-out 0.75s;
     // adds animation properties before page load. Basically hides btn and then uses delay property
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $font-default-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-bottom: 2px solid $color-primary;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
   }
 }
