@@ -1,8 +1,12 @@
+/* About section */
+
 .section-about {
   background-color: $color-gray-light-1;
-  padding: 34rem 0;
+  padding: 24rem 0;
   margin-top: -20vh;
 }
+
+/* Features section */
 
 .section-features {
   padding: 20rem 0;
@@ -15,4 +19,12 @@
   & > * {
     transform: skewY(7deg);
   }
+}
+
+/* Tours section */
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 34rem 0 15rem 0;
+  margin-top: -12rem;
 }
