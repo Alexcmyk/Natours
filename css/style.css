@@ -94,31 +94,34 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-l {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-m {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-s {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-l {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-xl {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
+/* ------------------------- Components -------------------------  */
 /* Button styles */
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease-in-out;
   position: relative;
-  font-size: 1.6; }
+  font-size: 1.6;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   transform: translateY(-5px);
@@ -127,7 +130,8 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -326,6 +330,7 @@ body {
     font-size: 6rem;
     font-weight: 100; }
 
+/* Story cards */
 .story {
   width: 55%;
   margin: 0 auto;
@@ -379,6 +384,7 @@ body {
     transform: translateX(-4rem) scale(1);
     filter: blur(3px) brightness(90%); }
 
+/* BG Video */
 .bg-video {
   position: absolute;
   top: 0;
@@ -392,6 +398,84 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover; }
+
+/* Form Styles */
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease-in-out; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #55c57a; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -0.4rem; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 /* Grid layout */
 .row {
@@ -442,13 +526,13 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
-/* About section */
+/* ------------------------- About Section -------------------------  */
 .section-about {
   background-color: #f7f7f7;
   padding: 24rem 0;
   margin-top: -20vh; }
 
-/* Features section */
+/* ------------------------- Feature Card Section -------------------------  */
 .section-features {
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
@@ -458,13 +542,27 @@ body {
   .section-features > * {
     transform: skewY(7deg); }
 
-/* Tours section */
+/* ------------------------- Tours Card Section -------------------------  */
 .section-tours {
   background-color: #f7f7f7;
   padding: 34rem 0 15rem 0;
   margin-top: -12rem; }
 
-/* Stories section*/
+/* ------------------------- Testimonials -------------------------  */
 .section-stories {
-  padding: 15rem 0 20rem 0;
+  padding: 15rem 0;
   position: relative; }
+
+/* ------------------------- Book Now Section -------------------------  */
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .book__form {
+    width: 50%;
+    padding: 5rem; }

@@ -1,4 +1,4 @@
-/* About section */
+/* ------------------------- About Section -------------------------  */
 
 .section-about {
   background-color: $color-gray-light-1;
@@ -6,7 +6,7 @@
   margin-top: -20vh;
 }
 
-/* Features section */
+/* ------------------------- Feature Card Section -------------------------  */
 
 .section-features {
   padding: 20rem 0;
@@ -21,7 +21,7 @@
   }
 }
 
-/* Tours section */
+/* ------------------------- Tours Card Section -------------------------  */
 
 .section-tours {
   background-color: $color-gray-light-1;
@@ -29,9 +29,28 @@
   margin-top: -12rem;
 }
 
-/* Stories section*/
+/* ------------------------- Testimonials -------------------------  */
 
 .section-stories {
-  padding: 15rem 0 20rem 0;
+  padding: 15rem 0;
   position: relative;
+}
+
+/* ------------------------- Book Now Section -------------------------  */
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+  background-image: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: $shadow-default;
+
+  &__form {
+    width: 50%;
+    padding: 5rem;
+  }
 }
