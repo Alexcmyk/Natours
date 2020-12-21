@@ -8,6 +8,40 @@
   left: 0;
   background-color: rgba($color-black, 0.9);
   z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &:target {
+    //:target psudo class to apply to the target ID in the index
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    // styling the child of the popup so it zoomz in
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 3rem;
+      right: 3.25rem;
+      font-size: 4rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+      line-height: 1;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
 
   &__content {
     width: 75%;
@@ -16,10 +50,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
     border-radius: 5px;
     display: table;
     overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s 0.2s ease-in;
   }
 
   &__left {
@@ -42,9 +78,19 @@
   &__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
+
     column-count: 2; // Adds two columns to the text
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2; // adds line between the columns
+
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-grey-light-2;
+
     hyphens: auto; // Adds hypens to needed words
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
   }
 }
